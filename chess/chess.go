@@ -1,4 +1,4 @@
-package main
+package chess
 
 import (
 	"fmt"
@@ -79,6 +79,10 @@ func (b *Board) Move(m Move) bool {
 	return true
 }
 
+func (b Board) IsSolved() bool {
+	return len(b.PastPositions) == b.Size.X * b.Size.Y
+}
+
 func (b Board) String() string {
 	// Create a positions array
 	positions := make([][]int, b.Size.X)		// position[x][y]
@@ -110,12 +114,4 @@ func (b Board) String() string {
 	}
 
 	return boardStr
-}
-
-func main() {
-	b := CreateBoard(Position{8, 8}, Position{4, 3})
-	b.Move(Moves[0])
-	b.Move(Moves[0])
-	fmt.Println(b)
-	fmt.Println(b.PlayerPosition)
 }

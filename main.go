@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
+	"./chess"
+	"./solver"
 )
 
 func main() {
-	b := chess.CreateBoard(Position{8, 8}, Position{4, 4})
-	b.Move(Moves[1])
-	b.Move(Moves[1])
-	fmt.Println(b)
+	b := chess.CreateBoard(chess.Position{8, 8}, chess.Position{1, 1})
+	solver.SolveBoard(b)
 }
