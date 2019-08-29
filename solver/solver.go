@@ -2,8 +2,8 @@ package solver
 
 import (
 	"../chess"
+	"errors"
 	"fmt"
-	"github.com/pkg/errors"
 )
 
 func SolveBoard(b chess.Board) {

@@ -104,8 +104,14 @@ func (b Board) String() string {
 				boardStr += "  "
 			} else {
 				if j <= 9 {			// Buffer the number appropriately	// TODO: Make this work for higher numbers
+					boardStr += fmt.Sprintf("%d    ", j)
+				} else if j <= 99 {
+					boardStr += fmt.Sprintf("%d   ", j)
+				} else if j <= 999 {
+					boardStr += fmt.Sprintf("%d  ", j)
+				} else if j <= 9999 {
 					boardStr += fmt.Sprintf("%d ", j)
-				} else {
+				} else if j <= 99999 {
 					boardStr += fmt.Sprintf("%d", j)
 				}
 			}

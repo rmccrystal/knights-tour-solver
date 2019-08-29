@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	b := chess.CreateBoard(chess.Position{8, 8}, chess.Position{1, 1})
+	b := chess.CreateBoard(chess.Position{50, 50}, chess.Position{1, 1})
 	solver.SolveBoard(b)
 }
